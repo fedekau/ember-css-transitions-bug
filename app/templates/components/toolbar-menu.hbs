@@ -1,0 +1,25 @@
+{{#paper-toolbar}}
+  {{#paper-toolbar-tools}}
+    <h2>
+      Example
+    </h2>
+    <span class="flex"></span>
+    {{#paper-menu isOpen=menuOpen position="target-right target" as |menu|}}
+      {{#menu.trigger}}
+        {{#paper-button onClick=(action (mut menuOpen)) iconButton=true}}
+          {{paper-icon "more_vert" class="md-menu-origin"}}
+        {{/paper-button}}
+      {{/menu.trigger}}
+
+      {{#menu.content as |content|}}
+      {{#link-to "route1"}}
+        {{#content.menu-item}}
+          {{paper-icon 'exit_to_app'}}
+          <span>Route 1</span>
+        {{/content.menu-item}}
+        {{/link-to}}
+      {{/menu.content}}
+    {{/paper-menu}}
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
+
